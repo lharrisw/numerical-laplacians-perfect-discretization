@@ -2,11 +2,9 @@
 
 This repository contains the computational work from my undergraduate physics senior thesis on numerical discretizations of the Laplace operator.
 
-The project compares standard 5-point and 9-point numerical Laplacians with a perfect Laplacian derived from the Klein–Gordon equation. The computations were implemented in MATLAB.
+I independently implemented and compared standard 5-point and 9-point numerical Laplacians in MATLAB. I also attempted to implement a perfect Laplacian based on the work of Simon Hauswirth.
 
 ## Project Overview
-
-Numerical solutions of partial differential equations require continuous differential operators to be replaced by discrete approximations that can be evaluated computationally.
 
 For a scalar function $u(x,y)$, the two-dimensional Laplace operator is
 
@@ -18,30 +16,44 @@ For a scalar function $u(x,y)$, the two-dimensional Laplace operator is
 \frac{\partial^2 u}{\partial y^2}.
 ```
 
-This project investigates different discrete representations of this operator and compares conventional finite-difference Laplacians with a perfect-discretization approach.
+The project investigated three discrete representations of this operator:
 
-The methods studied were:
+- a 5-point finite-difference Laplacian;
+- a 9-point finite-difference Laplacian;
+- an attempted implementation of a perfect Laplacian following Simon Hauswirth's treatment of fixed-point lattice operators.
 
-- 5-point numerical Laplacian
-- 9-point numerical Laplacian
-- Perfect Laplacian derived from the Klein–Gordon equation
+The 5-point and 9-point implementations, numerical experiments, and comparison code were my own work.
 
-## Motivation
+## Perfect Laplacian and Attribution
 
-Discretization replaces a continuous mathematical model with a finite computational representation. Different discretizations can preserve the behavior of the underlying continuous system with different levels of accuracy and computational complexity.
+The mathematical construction of the perfect Laplacian was taken from the work of **Simon Hauswirth**.
 
-The purpose of this project was to study how several representations of the Laplacian behave computationally and to explore the idea of a perfect discretization.
+I attempted to translate Hauswirth's formulation into MATLAB as part of my senior thesis. That implementation was my own code, but I did not reproduce Hauswirth's method successfully enough for it to be considered a faithful reference implementation.
+
+Accordingly, this repository should distinguish between:
+
+- my independent implementations of the standard numerical Laplacians; and
+- my attempted implementation of Hauswirth's perfect-Laplacian construction.
+
+The latter is best viewed as exploratory undergraduate work undertaken while learning the theory.
 
 ## Computational Work
 
-MATLAB was used to implement the numerical operators and perform the computations used in the thesis.
+MATLAB was used throughout the project.
 
-The project involved:
+My work included:
 
-- construction of discrete Laplacian operators;
-- numerical comparison of multiple discretization schemes;
-- implementation of the methods in MATLAB;
-- analysis of the resulting numerical behavior.
+- implementing the 5-point Laplacian;
+- implementing the 9-point Laplacian;
+- constructing numerical experiments to compare the discretizations;
+- analyzing the resulting behavior;
+- attempting to implement Hauswirth's perfect-Laplacian formulation.
+
+## Limitations
+
+The standard finite-difference implementations were completed independently.
+
+The perfect-Laplacian portion should be treated with caution. Although I wrote the MATLAB implementation myself, the underlying construction was Hauswirth's, and my implementation did not reproduce that construction as accurately as intended.
 
 ## Mathematical and Computational Topics
 
@@ -49,25 +61,19 @@ The project involved:
 - Partial differential equations
 - Finite-difference methods
 - Laplace operator
-- Klein–Gordon equation
 - Perfect discretization
 - Scientific computing
 - MATLAB
 
-## Repository Contents
-
-This repository contains the MATLAB files used for the numerical computations presented in the senior thesis.
-
 ## Future Improvements
 
-The original code was written as part of an undergraduate research project. Planned improvements to the repository include:
-
-- reorganizing the MATLAB code into clearly documented components;
-- adding instructions for reproducing the numerical experiments;
-- adding figures illustrating the comparisons;
-- documenting the mathematical derivation used in the project;
-- adding comments and function documentation to the MATLAB source;
-- reproducing selected computations in Python.
+- Revisit Hauswirth's derivation in detail.
+- Reimplement the perfect Laplacian more faithfully.
+- Document the correspondence between the code and Hauswirth's equations.
+- Add reproducible numerical experiments and figures.
+- Quantify error for the 5-point and 9-point schemes.
+- Compare those results with a corrected perfect-Laplacian implementation.
+- Reproduce selected computations in Python.
 
 ## Author
 
